@@ -1,7 +1,7 @@
-import { Maddox_NEW_SCORE } from './defaults.js';
-import { getPlayer, getLeaderboardData, setLeaderboardData } from './game-session.js';
+import { GARFIELD_NEW_SCORE } from '../config/defaults.js';
+import { getPlayer, getLeaderboardData, setLeaderboardData } from '../modules/game-session.js';
 
-export function recordMaddoxHighScore() {
+export function recordGarfieldHighScore() {
   const player = getPlayer();
 
   if (!player) {
@@ -15,7 +15,7 @@ export function recordMaddoxHighScore() {
 
   leaderboard.push({
     name: player,
-    score: Maddox_NEW_SCORE
+    score: GARFIELD_NEW_SCORE
   });
 
   leaderboard.sort((a, b) => b.score - a.score);
@@ -24,6 +24,6 @@ export function recordMaddoxHighScore() {
 
   return {
     success: true,
-    message: `${player}'s score of ${Maddox_NEW_SCORE} has been recorded.`
+    message: `${player}'s score of ${GARFIELD_NEW_SCORE} has been recorded.`
   };
 }
